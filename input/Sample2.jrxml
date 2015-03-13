@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Sample2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d2ea8681-7683-4570-9557-7eba37c4c969">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="empAge" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[28]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select employee.emp_id, employee.emp_name, employee.emp_age, department.dept_name, department.division from employee, department where (employee.dept_id = department.id and employee.emp_age = $P{empAge});]]>
+	</queryString>
+	<field name="emp_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="emp_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="emp_age" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dept_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="division" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="emp_id">
+		<groupExpression><![CDATA[$F{emp_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="1b7194b4-5e8a-4709-b47b-1d8576ce0e70" x="209" y="25" width="150" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Employee and Division]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="42e6c7d2-a72d-4179-973e-e5de61ad3211" x="0" y="2" width="64" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[emp_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6139afc5-00bb-485a-b543-a6967770928a" x="129" y="2" width="64" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[emp_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e1fa3326-d7bf-4362-b485-808bb8521d92" x="251" y="2" width="64" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[emp_age]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="be05cd9c-a37d-4716-bf7d-865d32d4c051" x="375" y="2" width="64" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[dept_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3a88e71e-bc65-4043-bd29-2e5b4d16c971" x="491" y="2" width="64" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[division]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement uuid="dec50b0b-bbdc-4263-865d-04d4ec629d33" x="0" y="13" width="64" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emp_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7437b5c3-ea60-40e7-8966-d78d0908f19f" x="129" y="13" width="64" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emp_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="10b4c4a0-e567-4b67-a513-7772b7e94481" x="251" y="13" width="64" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emp_age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e5b02ea9-2908-4143-9222-cf56f3bb9a89" x="375" y="13" width="64" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dept_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5dd57f86-7672-41b7-9f4b-8000052acf80" x="491" y="13" width="64" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{division}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
